@@ -11,5 +11,7 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 app.use('/v1', api);
-
+app.get('/', (req,res)=>{
+    res.send('hello')
+})
 module.exports = app;
