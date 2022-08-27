@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
-  country: { type: String, required: true },
+  country: { type: String },
 });
 
 userSchema.methods.generateAuthToken = function () {
@@ -38,4 +38,4 @@ const validateLogin = (loginData) => {
   return schema.validate(loginData);
 };
 
-module.exports = { User, validateRegister,validateLogin };
+module.exports = { User, validateRegister, validateLogin };
